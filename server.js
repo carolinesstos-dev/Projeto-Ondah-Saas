@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('express-async-errors'); 
 
 const express = require("express");
 const pool = require("./config/db");
@@ -20,9 +21,6 @@ app.set('etag', false);
 
 app.use(express.json());
 
-// Evita que o navegador cacheie/valide respostas das rotas de API com 304.
-// Fica antes das rotas de API e antes do express.static, então os arquivos
-// estáticos (html, css, js, imagens) continuam com cache normal.
 app.use((req, res, next) => {
   res.set('Cache-Control', 'no-store');
   next();
@@ -52,6 +50,11 @@ app.use("/produtos/:produtoId/fotos", fotoRoutes);
 app.use("/fotos", fotoItemRoutes);
 app.use('/loja', lojaRoutes);
 app.use('/pedidos', pedidoItemRoutes);
+
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).json({ erro: 'Erro interno do servidor. Tente novamente em instantes.' });
+});
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
