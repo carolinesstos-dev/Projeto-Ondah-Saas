@@ -1,0 +1,19 @@
+<svg width="260" height="96" viewBox="195 50 325 120" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clipPath id="badgeClip">
+<circle cx="255" cy="110" r="55"/>
+</clipPath>
+</defs>
+
+<circle cx="255" cy="110" r="55" fill="#FBE7C6"/>
+
+<g clip-path="url(#badgeClip)">
+<circle cx="230" cy="82" r="14" fill="#FF9166"/>
+<path d="M200 108 Q217 92 234 108 T268 108 T302 108 T310 108 L310 165 L200 165 Z" fill="#1E7FA6"/>
+<path d="M200 122 Q217 106 234 122 T268 122 T302 122 T310 122 L310 165 L200 165 Z" fill="#0F5E80"/>
+</g>
+<circle cx="255" cy="110" r="55" fill="none" stroke="#0F5E80" stroke-width="1.5" opacity="0.25"/>
+
+<text x="330" y="100" font-family="Arial, sans-serif" font-size="30" font-weight="600" fill="#12384F">Ondah</text>
+<text x="332" y="122" font-family="Arial, sans-serif" font-size="11" fill="#6B8494" letter-spacing="0.5">solução para quem empreende</text>
+</svg>
